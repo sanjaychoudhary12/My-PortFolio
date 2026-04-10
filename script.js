@@ -27,20 +27,29 @@ $(document).ready(function () {
         $('.menu-btn i').toggleClass("active");
     });
 
-    // typing animation
+  //   typing animation
     new Typed(".typing", {
-        strings: ["Backend Developer", "Java Developer", "Spring Boot"],
+        strings: ["Java Backend Developer", "Software Developer", "Spring Boot"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     new Typed(".typing-2", {
-        strings: ["Backend Developer", "Java Developer", "Spring Boot"],
+        strings: ["Java Backend Developer", "Software Developer", "Spring Boot"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
+
+    new Typed(".typing-3", {
+            strings: ["Clean","testable code",
+            "Security-first design."],
+             typeSpeed: 100,
+                    backSpeed: 60,
+                    loop: true
+        });
+
 
     $('.carousel').owlCarousel({
         margin: 20,

@@ -213,7 +213,7 @@ section .title::after {
 
 .home .home-content .text-1 {
     font-size: 27px;
-    color: #94a3b8;
+    color: #C3D6F4;
 
 }
 
@@ -227,7 +227,7 @@ section .title::after {
 .home .home-content .text-3 {
     font-size: 40px;
     margin: 5px 0;
-    color: #d2b2c1;
+    color: #C3D6F4;
 }
 
 .home .home-content .text-3 span {
@@ -254,8 +254,16 @@ section .title::after {
 }
 
 /* about section styling */
+.about {
+    background: linear-gradient(to bottom, #050957, #3943F3);
+    padding: 60px 0;
+    color: #ffffff;
+}
+
 .about .title::after {
+    background: #050957;
     content: "who i am";
+    color: white;
 }
 
 .about .about-content .left {
@@ -290,7 +298,7 @@ section .title::after {
 .about .about-content .right a {
     display: inline-block;
     background: #38bdf8;
-    color: #fff;
+    color: #ffff;
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
@@ -308,7 +316,7 @@ section .title::after {
 /* services section styling */
 .services {
     color: #fff;
-    background: #0f172a;
+    background: linear-gradient(to bottom, #3943F3, #3943F3);
 }
 
 .services .title::before {
@@ -317,14 +325,14 @@ section .title::after {
 }
 
 .services .title::after {
-    background: #111;
+    background: #3943F3;
     content: "what i provide";
     color: white;
 }
 
 .services .serv-content .card {
     width: calc(33% - 20px);
-    background: #1e293b ;
+    background: #050957;
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
@@ -334,6 +342,8 @@ section .title::after {
 
 .services .serv-content .card:hover {
     background: #38bdf8;
+     transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 .services .serv-content .card .box {
@@ -361,73 +371,110 @@ section .title::after {
 }
 
 
-/* Project section styling */
+/* ===============================
+   PROJECT SECTION STYLING
+   =============================== */
+
 .projects {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: linear-gradient(to bottom, #3943F3, #3943F3);
     padding: 80px 0;
+    color: #fff;
+}
+
+.projects .title::before {
+    background: #fff;
     color: white;
 }
 
+.services .title::after {
+    background: #3943F3;
+    color: white;
+}
+
+/* Container */
 .projects .serv-content {
     display: flex;
-    flex-wrap: wrap;       /* allows wrapping if screen small */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
 }
 
+/* ❌ OLD CONFLICTING CARD STYLE (REMOVE OR KEEP COMMENTED) */
+/*
 .projects .serv-content .card {
-
- width: calc(30% - 20px);
+    width: calc(30% - 20px);
     padding: 25px 20px;
     border-radius: 10px;
     background: #1e293b;
     transition: 0.3s;
-     /* width: 300px; */         /* fixed width = side-by-side */
 }
+*/
 
+/* ❌ NOT NEEDED (DUPLICATE STRUCTURE) */
+/*
 .projects .projects-content {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
 }
+*/
 
-.projects .card {
-    background: #1e293b;
-    width: 300px;
-    padding: 25px;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.projects .card:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: #334155;
-}
-
-.projects .card .box {
+/* ✅ FINAL CARD (SAME AS SERVICES) */
+.projects .serv-content .card {
+    width: calc(33% - 20px);
+    background: #050957;
     text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.projects .card i {
-    font-size: 40px;
+/* Hover effect (same as services) */
+.projects .serv-content .card:hover {
+    background: #38bdf8;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Inner box */
+.projects .serv-content .card .box {
+    transition: all 0.3s ease;
+}
+
+/* Slight zoom inside */
+.projects .serv-content .card:hover .box {
+    transform: scale(1.05);
+}
+
+/* Icon */
+.projects .serv-content .card i {
+    font-size: 50px;
     color: #38bdf8;
-    margin-bottom: 10px;
+    transition: 0.3s ease;
 }
 
-.projects .card .text {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 10px;
+/* Icon hover */
+.projects .serv-content .card:hover i {
+    color: #fff;
 }
 
-.projects .card p {
+/* Title */
+.projects .serv-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* Description */
+.projects .serv-content .card p {
     font-size: 14px;
     color: #cbd5f5;
 }
 
-.projects .card a {
+/* Button */
+.projects .serv-content .card a {
     display: inline-block;
     margin-top: 15px;
     padding: 8px 18px;
@@ -438,7 +485,8 @@ section .title::after {
     transition: 0.3s;
 }
 
-.projects .card a:hover {
+/* Button hover */
+.projects .serv-content .card a:hover {
     background: #0ea5e9;
 }
 
@@ -451,8 +499,18 @@ section .title::after {
 /* ===== SKILLS SECTION (UPDATED 🔥) ===== */
 
 .skills {
-    background: #0f172a;
+    background: #3943F3;
     padding: 80px 0;
+    color: white;
+}
+
+.skills .title::before {
+    background: #fff;
+    color: white;
+}
+
+.skills .title::after {
+    background: #3943F3;
     color: white;
 }
 
@@ -482,6 +540,7 @@ section .title::after {
     perspective: 1000px;
     cursor: pointer;
 }
+
 
 /* INNER */
 .skill-inner {
@@ -514,12 +573,16 @@ section .title::after {
 
 /* FRONT */
 .skill-front img {
-    width: 60px;
-}
+     width: 90%;
+        height: 90%;
+        object-fit: contain;
+    }
+
+
 
 /* BACK */
 .skill-back {
-    background: #1e293b;
+    background: #38bdf8;
     color: white;
     font-size: 12px;
     padding: 10px;
@@ -602,7 +665,7 @@ section .title::after {
 }
 
 .contact .contact-content .info .sub-title {
-    color:#cbd5f5;
+    color:#38bdf8;
 }
 
 .contact .right form .fields {
@@ -676,7 +739,7 @@ section .title::after {
 
 /* footer section styling */
 footer {
-    background: #111;
+    background: #1e293b;
     padding: 15px 23px;
     color: #a4f4b4;
     text-align: center;
@@ -842,4 +905,14 @@ footer span a:hover {
         font-size: 23px;
         line-height: 38px;
     }
+}
+
+.typed-fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.about * {
+    color: #ffffff;
 }
